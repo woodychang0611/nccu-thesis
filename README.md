@@ -21,6 +21,11 @@
 主要章節會在 ./chapter/ 資料夾裡面，可以自行新增。
 章節順序請在 ./thesis.tex 內編排修改。
 
+```
+Note: 在 overleaf 上傳 zip file 後，
+要點選右上角的齒輪將 latex engin 改成 Xelatex 
+才可以順利通過編譯。 
+```
 詳細說明
 ----------
 目前請先參考交大 [shaform](https://github.com/shaform) 所撰寫的 [wiki](https://github.com/shaform/ntu-thesis/wiki) 說明。
