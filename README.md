@@ -16,12 +16,10 @@
 
 快速開始
 ----------
-這份文件主要提供在 [overleaf](https://www.overleaf.com/) 上編輯撰寫，將這個 repo 下載成 zip 後就可以直接輸入 overleaf 順利編譯。
-
-主要章節會在 ./chapter/ 資料夾裡面，可以自行新增。
-章節順序請在 ./thesis.tex 內編排修改。
-
-此外 ***口試委員審定書*** 會由系辦助教在口試當天協助印出，口試完成後將有口委簽名的版本掃描成 PDF 檔，取代 ./pdfs/cert.pdf ，就可以修改成自己的審定書了。
+* 這份文件主要提供在 [overleaf](https://www.overleaf.com/) 上編輯撰寫，將這個 repo 下載成 zip 後就可以直接輸入 overleaf 順利編譯。
+* 主要章節會在 ./chapter/ 資料夾裡面，可以自行新增。
+* 章節順序請在 ./thesis.tex 內編排修改。
+* ***口試委員審定書*** 會由系辦助教在口試當天協助印出，口試完成後將有口委簽名的版本掃描成 PDF 檔，取代 ./pdfs/cert.pdf ，就可以修改成自己的審定書了。
 
 ```
 Note: 在 overleaf 上傳 zip file 後，
