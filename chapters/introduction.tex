@@ -1,35 +1,32 @@
-\chapter{緒論}
+\chapter{Introduction}
 \label{c:intro}
-\section{研究動機}
 
-交大\cite{test1999}提出了「假的」學說，說明畢業才是真的~\citep{test1999}
-
-測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業測試文字我想畢業
-
-\section{研究背景}
-\subsection{測試測試}
-
-
-\section{研究目標}
-\begin{enumerate}
-\item 想辦法畢業
-\item 想辦法畢業
-\item 想辦法畢業
-\item 想辦法畢業
-\end{enumerate}
-\section{研究問題}
-整合上述，本研究想要想辦法畢業：
-
-\noindent
-想辦法畢業：
-\begin{enumerate}
-\label{q1}
-\item 想辦法畢業？
-\end{enumerate}
-
-
-
-\section{研究重要性} 
-想辦法畢業
-
-
+Since 2008 Natoshi Nakamoto have proposed the idea of Blockchain in the Bitcoin White Paper\cite{Bitcoin}, the idea do not refer specifically to any cryptocurrency like Bitcoin, Ethereum\cite{Ethereum} or Ripple\cite{Ripple} but become a general term of the decentralized database technolodge based on the peer to peer network system.
+The Blockchain is a kind of decentralized database system which comprises of consecutive blocks to store a constant amounts of data in each block. 
+Each block would contain the timestamp, previous block hash and specific data basically. Every nodes would keep the whole blockchain with consistent blocks except distinctive reasons such as the SPV (Simplified Payment Verification) wallet.
+A blockchain would start from a particular {\em genesis block} and the {\em genesis block} is the only special case in the system that doesn't need to contain the previous block hash since it's the {\em First Block}. \par
+	The design of block have reasonable purposes: The blockchain is used to record the transaction data originally, thus storing unrecord data into a block at intervals would be a straightforward system design. 
+The timestamp records the time of a block be created successfully and because of each node might have various local UTC time, the block timestamps are either exactly correct or in order but only to within two hours in Bitcoin system.
+Hence the attacker can only fork the block relates to recent blocks. The previous hash is used to avoid the attacker tamper with the exsited blocks because of even a single bit modify would lead to different hash value, it's not reasonable to forge a block $A$ by tamper with the all blocks after $A$. Therefore the block would become more and more safer as time goes by.\par
+	In contrast to the traditional centralized systems that all the other nodes would only need to follow whatever the instructions from the main node or group of main nodes, a distributed system like blockchain do not have a role of master that can control all the other lower level nodes.
+As a result of that, we do need an more complex algorithm for the reason of making data between all the nodes to be consistent.
+We call that kind of algorithms as {\em Consensus Algorithm} in the field of distributed computing system.
+In the blockchain system, The node will execute the consensus algorithm to verify the data which have been requested from client after the client sends the requests to the node belongs to the systemand output the valid block and commit into the local database ultimately.
+The earlier blockchain systems such as Bitcoin, Ethereum use PoW (proof of work) to reach the consensus. 
+Our solution is inspired by Hydrachain\cite{Hydrachain}. Compared with PoW, our scheme is much more efficient and suited in some scenarios like {\em Private Chain} or {\em Consortium Chain}.
+The throughput of Bitcoin is only $3 \sim 7$ tps (transactions per second)\cite{BitcoinThroughput} and even Ethereum still have throughput of $10 \sim 30$ tps. On the other hand, our solution can reach more than a thousand tps in the small network.\par
+	Sometimes we need to categorize each node with different permissions in the system or only the node with authorization can join the system for different applications.
+For instance, 
+As a result of the concept, we define the original design of blockchain that anyone can join the network without specific permissions (like Bitcoin, Ethereum main chain) as the {\em Public Chain}. 
+And the blockchain that requires the permission of the system creator or by a set of rules predefined in the system, we call it {\em Private Chain} or {\em Consortium Chain}.
+Although we can construct a private chain by PoW through some specific methods such as {\em Ethereum Smart Contract}, but we do have better choice that have higher performance.
+For instance, using PAXOS\cite{PAXOS} or PBFT (Practical Byzantine Fault Tolerance)\cite{PBFT} as the consensus algorithm would increase the system throughput a lot and have no unnecessary power consumption.\par
+	\subsection*{Motivation}
+	Compared to the traditional centralized database systems, the current blockchain systems such as Bitcoin, Ethereum have worse performance.
+Since the performance dose limit the scenarios that the blockchain system can be a suitable application, 
+we would like to propose a more efficient consensus algorithm that can improve the current throughput of blockchain system and make the blockchain system more captible in the fields of higher performance threshold.
+	\subsection*{Contribution}
+	We proposed the {\em Multi-Signature Byzantine Agreement} which is a more efficient solution for the blockchain system and promises to keep the two critical properties: {\em Safety} and {\em Liveness}.\par
+We have two kind of assumptions to a faulty node in the previous researchs of consensus algorithm: Non-Byzantine Fault and Byzantine Fault. 
+The Non-Byzantine Fault means a node can only response nothing as a wrong behavior or comply with the rules predefined by the algorithm.
+In contrast to the Non-Byzantine Fault, the Byzantine Fault means a faulty node can do everything it want such as sending the inconsistent message or response nothing.
