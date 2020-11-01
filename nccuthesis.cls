@@ -12,7 +12,7 @@
 
 % Derived from book class
 \DeclareRobustCommand{\@typeen}{Master}
-\DeclareRobustCommand{\@typezh}{碩士學位}
+\DeclareRobustCommand{\@typezh}{碩士}
 \DeclareRobustCommand{\@classen}{Thesis}
 \DeclareRobustCommand{\@classzh}{論文}
 \DeclareOption{phd}{\gdef\@typeen{Doctoral}\gdef\@typezh{博士}\gdef\@classen{Dissertation}}
@@ -67,17 +67,17 @@
     \begin{singlespace}
     \begin{center}
       \fontsize{18}{27}\selectfont
-      \@universityzh\@collegezh\@institutezh\par
+      \@universityzh\@institutezh\par
+      \@instituteen\par
+      \@universitye
+      \vspace{\fill}
+      {\fontsize{18}{24}\selectfont
         \@typezh{}\@classzh\par
-      {\fontsize{14}{21}\selectfont
-        \@instituteen\par
-        \@collegeen\par}
-      {\fontsize{16}{24}\selectfont
-        \@universityen\par
         \@typeen{} \@classen\par}
       \vspace{\fill}
+      {\fontsize{20}{24}\selectfont
       \@titlezh\par
-      \@titleen\par
+      \@titleen\par}
       \vspace{\fill}
       指導教授：\@advisorzh\\
       Advisor: \@advisoren\par
