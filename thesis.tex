@@ -14,14 +14,16 @@
 \usepackage{amssymb}
 \usepackage{booktabs}
 \usepackage{adjustbox}
-
 % Format the refs
-\usepackage[sort,comma]{natbib}
+%\usepackage[sort,comma,square ]{natbib}
 \usepackage[hidelinks]{hyperref}
 
 % For the tree
 \usepackage{tikz}
 \usepackage{tikz-qtree}
+
+%Bibliography style
+\bibliographystyle{acm}
 
 % For barchart
 \usepackage{pgfplots}
@@ -31,7 +33,8 @@
 
 % Set the default fonts
 \setmainfont{Times New Roman}
-\setCJKmainfont{TW-Kai}
+\setCJKmainfont{AR PL UKai TW}
+\setCJKmonofont{AR PL UKai TW}
 
 % Your information goes here
 \input{nccuvars}
@@ -59,7 +62,7 @@
 \addcontentsline{toc}{chapter}{口試委員會審定書}
 \includepdf[pages={1}]{pdfs/cert.pdf}
 
-\input{acknowledgements}
+%\input{acknowledgements}
 \input{abstract}
 
 % Table of Content
@@ -93,9 +96,7 @@
 \clearpages
 \phantomsection
 \addcontentsline{toc}{chapter}{\bibname}
-\bibliographystyle{apa}
-
 % Your bibliography goes here
-\bibliography{thesis}
+\bibliography{thesis.bib}
 
 \end{document}
