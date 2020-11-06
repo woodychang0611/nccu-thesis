@@ -5,9 +5,19 @@ Loss aversion Psychologically, losses are twice as powerful as gains \cite{Tvers
 
 \section {Related Works}
 \subsection{Modern Portfolio Theory (MPT)}
-Modern portfolio theory (MPT) was introduced by Harry Markowitz introduced MPT in 1952\cite{10.2307/2975974}. 
+Harry Markowitz introduced modern portfolio theory (MPT) introduced MPT in 1952\cite{10.2307/2975974}. Instead of maximizing return, the objective of MPT is to find the maximum expected return on a given risk. The variance of the portfolio is used as an indicator of risk. 
+\par
+For an N assets portfolio, \(E_i\) and  \(\sigma_i\) is the expected return and standard deviation of the asset. \(w_i\) is the weighting of the asset in the portfolio.\(\rho_{ij}\) is the correlation coefficient between the returns on assets i and j.
+The expected return and variance of the portfolio, \(E_p\) and \(\sigma_p^2\), are defined as:
+\[ E_p = \sum_i^N w_i E_i\]
+\[\sigma_p^2 = \sum_i \sum_j w_i w_j \sigma_i \sigma_j \rho_x\]
+\par
+The next step is plot expected return and variance of all portfolio on a graph and find the efficient frontier. Than we can get the portfolio with the maximize return on a given risk, or, vice versa, the lowest risk on a given expected return from the efficient frontier.
 
-
+\subsection{Financial Market Predictions with Machine Learning}
+Machine Learning has become a powerful tool in many fields, including finance. Christopher Krauss successfully used various machine learning techniques, including deep neural networks, gradient-boosted-trees, and random forests, to create ensembles predicting the S\&P 500 index that out-performed the general market. \cite{KRAUSS2017689} 
+\par
+Thomas Fischer brings deep learning to the next level by using Long Short-Term Memory (LSTM) network.\cite{FISCHER2018654} His model demonstrates LSTM can effectively extract meaningful information from noisy financial time series data and beat other machine learning models in  Christopher Krauss's article  \cite{KRAUSS2017689} for most situations, except the crisis in 2009, where Random Forest perform better than LSTM.
 \section {Research Objective}
 
 \label{c:intro}
