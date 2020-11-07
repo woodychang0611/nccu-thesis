@@ -4,15 +4,36 @@
 %\section{First}
 %\label{s:related1}
 
-\section{Measures of Performance}
-Sharpe Ratio\cite{Sharpe49}
-\[ SR = \frac{E(R_a - R_b)}{\sigma_a}\]
+\section{Risk Adjusted Measures of Performance}
+
 \par
-Sterling ratio\cite{magdon2004maximum}
+Most investors take not just expected return but also risk into account. Using the expected return along will not be a good measure of investment performance since it does not reflect the risk. We will discuss a few risk-adjusted measures for performance over here.
+
+Sharpe Ratio\cite{Sharpe49} is one of the most well-known measure for performance of an investment. It represent amount of return per unit of variation, or risk.\\
+The revision version is defined as
+\[ SR = \frac{E(R_a - R_b)}{\sigma_a}\]
+\[(\sigma_a = \sqrt{VAR(R_a-R_b)}\]
+\\
+where \(R_a\) is the return of the assert, 
+\(R_b\) is the risk-free return,
+\(E(R_a - R_b)\) is the expected excess return of the assert,
+and \(\sigma_a\) is standard deviation of the excess return.
+One downside of the Sharpe Ratio is that it penalizes occasional high returns.\cite{9206647}
+\par
+Sterling ratio\cite{magdon2004maximum} uses max drawdown (MDD) over a given period to represent the risk.
+There're many forms of Sterling ratio, one common definition is defined as 
 \[ SR = \frac{E(R_a - R_b)}{MDD - 10\%}\]
 \par
-Calmar ratio\cite{young1991calmar}
+Calmar ratio\cite{young1991calmar} replace empirical max drawdown in Sterling ratio to the expected maximum drawdown \(E(MDD)\).
+\\It's defined as 
 \[C_T = \frac{E(R_a - R_b)}{E(MDD)}\]
+where expected maximum drawdown \cite{pratap2004maximum}
+
+
+\par
+Other \cite{bacon2009sharp}
+
+
 
 \section{Modern Portfolio Theory (MPT)}
 Harry Markowitz introduced modern portfolio theory (MPT) in 1952. Instead of maximizing the expected return, the objective of MPT is to find the maximum expected return on a given risk. The variance of the portfolio is used as an indicator of risk. \cite{10.2307/2975974}
