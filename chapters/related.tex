@@ -4,59 +4,16 @@
 %\section{First}
 %\label{s:related1}
 
-\section{Risk Adjusted Measures of Performance}
-
-\par
-Most investors take not just expected return but also risk into account. Using the expected return along will not be a good measure of investment performance since it does not reflect the risk. We will discuss a few risk-adjusted measures for performance over here.
-
-Sharpe Ratio\cite{Sharpe49} is one of the most well-known measure for performance of an investment. It represent amount of return per unit of variation, or risk.\\
-The revision version is defined as
-\[ SR = \frac{E(R_a - R_b)}{\sigma_a}\]
-\[(\sigma_a = \sqrt{VAR(R_a-R_b)}\]
-\\
-where \(R_a\) is the return of the assert, 
-\(R_b\) is the risk-free return,
-\(E(R_a - R_b)\) is the expected excess return of the assert,
-and \(\sigma_a\) is standard deviation of the excess return.
-One downside of the Sharpe Ratio is that it penalizes occasional high returns.\cite{9206647}
-\par
-Sterling ratio\cite{magdon2004maximum} uses max drawdown (MDD) over a given period to represent the risk.
-There're many forms of Sterling ratio, one common definition is defined as 
-\[ SR = \frac{E(R_a - R_b)}{MDD - 10\%}\]
-\par
-Calmar ratio\cite{young1991calmar} replace empirical max drawdown in Sterling ratio to the expected maximum drawdown \(E(MDD)\).
-\\It's defined as 
-\[C_T = \frac{E(R_a - R_b)}{E(MDD)}\]
-where expected maximum drawdown \cite{pratap2004maximum}
-
-
-\par
-Other \cite{bacon2009sharp}
+\input{chapters/related/risk-adjusted-measures}
+\input{chapters/related/mpt}
+\input{chapters/related/finance-ml}
+\input{chapters/related/finance-rl}
 
 
 
-\section{Modern Portfolio Theory (MPT)}
-Harry Markowitz introduced modern portfolio theory (MPT) in 1952. Instead of maximizing the expected return, the objective of MPT is to find the maximum expected return on a given risk. The variance of the portfolio is used as an indicator of risk. \cite{10.2307/2975974}
-\par
-For an N assets portfolio, \(E(R_i)\) and  \(\sigma_i\) is the expected return and standard deviation of the asset \(i\). \(w_i\) is the weighting of the asset in the portfolio.\(\rho_{ij}\) is the correlation coefficient between the returns on assets i and j.
-The expected return and variance of the portfolio, \(E(R_p)\) and \(\sigma_p^2\), are defined as:
-\[ E(R_p) = \sum_i^N w_i E_i\]
-\[\sigma_p^2 = \sum_i \sum_j w_i w_j \sigma_i \sigma_j \rho_{ij}\]
-where
-\[\forall w: w \geq 0\]
-\[\sum_i ^N w_i = 1\]
-\par
-The next step is plot expected return and variance of all portfolios and find the efficient frontier. Than we can identify the portfolio with the maximize return on a given risk, or, vice versa, the lowest risk on a given expected return from the efficient frontier.
 
-\section{Financial Market Predictions with Machine Learning}
-Machine Learning has become a powerful tool in many fields, including finance. Christopher Krauss successfully used various machine learning techniques, including deep neural networks, gradient-boosted-trees, and random forests, to create ensembles predicting the S\&P 500 index that out-performed the general market. \cite{KRAUSS2017689} 
-\par
 
-Thomas Fischer brings deep learning to the next level by using Long Short-Term Memory (LSTM) network.\cite{FISCHER2018654} His model demonstrates LSTM can effectively extract meaningful information from noisy financial time series data and beat other machine learning models in  Christopher Krauss's article  \cite{KRAUSS2017689} for most situations, except the crisis in 2009, where Random Forest perform better than LSTM.
 
-\section{Portfolio Allocation with Reinforcement Learning}
-MDD\cite{magdon2004maximum}
-Saud Almahdi uses Calmar ratio as objective function for Reinforcement Learning.
 \cite{AdaptivePortfolioTradingSystem}
 \section{Soft Actor-Critic (SAC)}
 Soft Actor-Critic (SAC)\cite{haarnoja2018soft}

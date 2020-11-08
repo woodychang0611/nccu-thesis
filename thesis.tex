@@ -16,7 +16,6 @@
 % Format the refs
 %\usepackage[sort,comma,square ]{natbib}
 \usepackage[hidelinks]{hyperref}
-
 % For the tree
 \usepackage{tikz}
 \usepackage{tikz-qtree}
@@ -97,7 +96,11 @@
 \addcontentsline{toc}{chapter}{\bibname}
 % Your bibliography goes here
 
-\bibliography{thesis-finance.bib,thesis-ml.bib,thesis-misc.bib}
+\bibliography{
+    bib/thesis-finance.bib,
+    bib/thesis-ml.bib,
+    bib/thesis-misc.bib
+}
 
 
 \end{document}
