@@ -69,7 +69,7 @@
       \fontsize{18}{27}\selectfont
       \@universityzh\@institutezh\par
       \@instituteen\par
-      \@universityen
+      \@universityen\par
       \vspace{\fill}
       {\fontsize{18}{24}\selectfont
         \@typezh{}\@classzh\par
