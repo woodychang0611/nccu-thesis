@@ -1,9 +1,12 @@
 \chapter{Introduction}
+\section {Background}
+A portfolio is a collection of financial investments. The goal of portfolio selection is to construct an optimal portfolio, which is different between investors due to their characteristics. Among these characteristics, risk tolerance is one of the critical factors. There are many indicators to represent the risk of the portfolio. Maximum Drawdown (MDD),  maximum loss from a peak, is a commonly used indicator of the risk.
 
+Traditionally portfolio selection can be divided into two stages. Frist stage constructs belief of future performance of available products. The second stage starts from the first stage and produces the choice of portfolio.  Modern Portfolio Theory (MPT) introduced by  Harry Markowitz \cite{10.2307/2975974} focus on the second stage. Machine Learning (ML) or Reinforcement Learning (RL) can combine both stages in a single process, from available features to a portfolio based on the given goal.
 \section {Motivation}
-Loss aversion Psychologically, losses are twice as powerful as gains \cite{Tversky1992}
+Loss aversion Psychologically, losses are twice as powerful as gains. \cite{Tversky1992} For Modern Portfolio Theory (MPT), an optimal portfolio can be contructed from given risk, or  
 
 \section {Research Objective}
-
+Psychologically, humans are loss aversion; losses are twice as powerful as gains. \cite{Tversky1992} With Modern Portfolio Theory (MPT), we can construct an optimal portfolio that produces the maximum expected return from given variance, an indicator of risk. However, this same goal will challenge machine learning models that maximum a specific performance measure, like the Shape ratio or the Sterling ratio. However, many of these measures are risk-adjusted.
 \label{c:intro}
 
