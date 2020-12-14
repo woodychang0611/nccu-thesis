@@ -1,0 +1,32 @@
+\section{test}
+With the assumption that the trading system follows Brownian motion where \(\mu\) is the average return per unit time, \(\tau\) is the standard deviation of the returns per unit time, and T is the interval of size, the expected maximum drawdown \(E(MDD)\) can be defined as\cite{1196267,pratap2004maximum}:
+\[E(MDD)=
+\begin{cases}
+    \cfrac{\tau^2}{\mu}Q_p(\cfrac{\mu^2T}{\tau^2}),&\text{if  }\mu > 0\\
+    1.2552 \tau \sqrt{T},& \text{if  }\mu=0 \\
+    \cfrac{\tau^2}{\mu}Q_n(\cfrac{\mu^2T}{\tau^2}),&\text{if  }\mu <0
+\end{cases}
+\]
+where
+\[
+\begin{aligned}
+Q_p(x) = &2\int_0^\infty\Biggl[
+    e^{-u}\sum_{n=1}^{\infty}
+    \cfrac{\sin^3(\theta_n)}{\theta_n-\cos(\theta_n)\sin(\theta_n)}
+    (1-e^{-\frac{x}{2cos^2(\theta_n)}})\\
+    &+e^{-\frac{u}{\tanh(u)}}\sinh(u)
+    (1-e^{-\frac{x}{2\cosh^2(\theta_n)}})
+    \Biggr]\,du
+\end{aligned}
+\]
+\[
+Q_n(x)-2\int_0^\infty e^u \sum_{n=1}^{\infty}
+\cfrac{\sin^3(\theta_n)}{\theta_n-\cos(\theta_n)\sin(\theta_n)}
+(1-e^{-\frac{x}{2cos^2(\theta_n)}})
+\,du
+\]
+\[
+\theta_n \text{ is the solution of }
+ \tanh(\theta_n) =\cfrac{\theta_n}{u},
+ \theta_n \in \bigl( (n-\cfrac{\pi}{2}),(n+\cfrac{\pi}{2})\bigr)
+\]

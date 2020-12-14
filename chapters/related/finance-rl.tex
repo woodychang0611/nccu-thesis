@@ -1,5 +1,5 @@
 \section{Trading systems with Reinforcement Learning}
-John Moody and Lizhong Wu introduced Reinforcement Learning for the trading system \cite{618952}. Trading systems trained via Reinforcement learning can incorporate the effects of transaction costs and taxes. The result of such systems outperformed trading systems trained via supervised learning with labels. For objective function, they observed maximizing the differential Sharpe ratio yields more consistent results than maximizing profits.\cite{618952,moody1998performance}\\
+John Moody and Lizhong Wu introduced Reinforcement Learning for the trading system \cite{618952}. Trading systems trained via Reinforcement learning can incorporate the effects of transaction costs and taxes. The result of such systems outperformed trading systems trained via supervised learning with labels. For objective function, they observed maximizing the differential Sharpe ratio yields more consistent results than maximizing profits\cite{618952,moody1998performance}.\\
 The differential Sharpe ratio \(D\) is defined as:
 \[
 \cfrac{d D_t}{d R_t} = 
@@ -11,4 +11,4 @@ A and B is the first and second moments of the returns' distributions
 B_n = \cfrac{1}{n}\sum_{i=1}^nR_i^2
 \]
 
-Saud Almahdi uses a coherent downside risk measure, the Calmar ratio,  as the objective function for Reinforcement Learning. \cite{AdaptivePortfolioTradingSystem} They show that the portfolios constructed using RRL with the expected maximum drawdown based Calmar ratio results yield better performance and transaction cost resilient than the portfolios constructed with the Sharpe ratio. 
+Saud Almahdi uses a coherent downside risk measure, the Calmar ratio,  as the objective function for Reinforcement Learning \cite{AdaptivePortfolioTradingSystem}. They show that the portfolios constructed using RRL with the expected maximum drawdown based Calmar ratio results yield better performance and transaction cost resilient than the portfolios constructed with the Sharpe ratio. 

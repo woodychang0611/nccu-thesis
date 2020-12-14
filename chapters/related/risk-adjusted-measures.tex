@@ -11,7 +11,7 @@ where \(R_a\) is the return of the assert,
 \(R_b\) is the risk-free return,
 \(E(R_a - R_b)\) is the expected excess return of the assert,
 and \(\sigma_a\) is standard deviation of the excess return.
-One downside of the Sharpe Ratio is that it penalizes occasional high returns.\cite{9206647}
+One downside of the Sharpe Ratio is that it penalizes occasional high returns\cite{9206647}.
 \subsection{Sterling ratio}
 Sterling ratio\cite{magdon2004maximum} uses max drawdown (MDD) over a given period to represent the risk; this resolves the issue Sharpe Ratio has with occasional high returns. 
 There are many forms of Sterling ratio; one common definition\cite{magdon2004maximum} is defined as 
@@ -19,37 +19,7 @@ There are many forms of Sterling ratio; one common definition\cite{magdon2004max
 \subsection{Calmar ratio}
 Calmar ratio\cite{young1991calmar} replace empirical max drawdown with the expected maximum drawdown \(E(MDD)\), defined as 
 \[C_T = \frac{E(R_a - R_b)}{E(MDD)}\]
-With the assumption that the trading system follows Brownian motion where \(\mu\) is the average return per unit time, \(\tau\) is the standard deviation of the returns per unit time, and T is the interval of size, the expected maximum drawdown \(E(MDD)\) can be defined as\cite{1196267,pratap2004maximum}:
-\[E(MDD)=
-\begin{cases}
-    \cfrac{\tau^2}{\mu}Q_p(\cfrac{\mu^2T}{\tau^2}),&\text{if  }\mu > 0\\
-    1.2552 \tau \sqrt{T},& \text{if  }\mu=0 \\
-    \cfrac{\tau^2}{\mu}Q_n(\cfrac{\mu^2T}{\tau^2}),&\text{if  }\mu <0
-\end{cases}
-\]
-where
-\[
-\begin{aligned}
-Q_p(x) = &2\int_0^\infty\Biggl[
-    e^{-u}\sum_{n=1}^{\infty}
-    \cfrac{\sin^3(\theta_n)}{\theta_n-\cos(\theta_n)\sin(\theta_n)}
-    (1-e^{-\frac{x}{2cos^2(\theta_n)}})\\
-    &+e^{-\frac{u}{\tanh(u)}}\sinh(u)
-    (1-e^{-\frac{x}{2\cosh^2(\theta_n)}})
-    \Biggr]\,du
-\end{aligned}
-\]
-\[
-Q_n(x)-2\int_0^\infty e^u \sum_{n=1}^{\infty}
-\cfrac{\sin^3(\theta_n)}{\theta_n-\cos(\theta_n)\sin(\theta_n)}
-(1-e^{-\frac{x}{2cos^2(\theta_n)}})
-\,du
-\]
-\[
-\theta_n \text{ is the solution of }
- \tanh(\theta_n) =\cfrac{\theta_n}{u},
- \theta_n \in \bigl( (n-\cfrac{\pi}{2}),(n+\cfrac{\pi}{2})\bigr)
-\]
+
 
 \subsection{Other Measures of Performance}
-There are many other Sharpe ratio variations, like Burke Ratio, Martin Ratio, or Pain Ratio\cite{bacon2009sharp}. Furthermore, Philippe Cogneau and Georges Hübner censused the 101 performance measures for portfolios. Many of the measures are risk-adjusted measures.\cite{cogneau2009101,cogneau2009more,cogneau2009more2} We will not discuss them in detail.
+There are many other Sharpe ratio variations, like Burke Ratio, Martin Ratio, or Pain Ratio\cite{bacon2009sharp}. Furthermore, Philippe Cogneau and Georges Hübner censused the 101 performance measures for portfolios. Many of the measures are risk-adjusted measures\cite{cogneau2009101,cogneau2009more,cogneau2009more2}.
