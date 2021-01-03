@@ -1,13 +1,7 @@
 \chapter{Introduction}
-\section {Background}
-A portfolio is a collection of financial investments. The goal of portfolio selection is to construct an optimal portfolio, which is usually different between investors due to their characteristics. Among these characteristics, risk preference is one of the significant factors. There are many indicators to represent the risk of the portfolio. Maximum Drawdown (MDD),  maximum loss from a peak over a given period, is a commonly used indicator of the risk.
+\input{chapters/Introduction/background}
+\input{chapters/Introduction/motivation}
+\input{chapters/Introduction/research-objective}
 
-Traditionally portfolio selection can be divided into two stages. First stage constructs the belief of future performance of available financial products. The second stage starts from the first stage and produces the choice of portfolio.  Modern Portfolio Theory (MPT) introduced by  Harry Markowitz \cite{10.2307/2975974} focus on the second stage. Machine Learning (ML) or Reinforcement Learning (RL) can complete both stages in a single process and construct portfolios that out-performed the general market\cite{KRAUSS2017689}
-\section {Motivation}.
-Psychologically, humans favor avoiding losses to acquire equivalent gains. This tendency is called Loss Aversion.\cite{kahneman2000analysis} Kahneman's study suggests losses are twice as powerful as gains\cite{Tversky1992}. With Modern Portfolio Theory (MPT), we can construct a portfolio that produces the maximum expected return from a given variance, an indicator of risk, or vice versa, the minimal variance from a given expected return\cite{10.2307/2975974}. MPT can construct portfolios fits different investors' preference.
-Although many portfolio performance measures are risk-adjusted\cite{cogneau2009101}, like the Shape ratio\cite{Sharpe49} or the Sterling ratio\cite{magdon2004maximum}, most of them do not incorporate investors' risk preferences. Constructing portfolios based on investors' risk preferences will challenge machine learning models optimizing with these measures.
-
-\section {Research Objective}
-This thesis aims to introduce an objective function and incorporate conventional Deep Reinforcement Learning (DRL) models to construct portfolios that fit investors with different risk preferences. The expected Maximum Drawdown (MDD) of the portfolio will represent investors' risk preferences and adjust the portfolio performance measure, which will be the objective function incorporate with DRL models to construct portfolios based on investors' risk preferences.
 \label{c:intro}
 

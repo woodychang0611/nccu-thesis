@@ -91,7 +91,33 @@
     \vspace{1cm}
   \end{titlepage}
 }
-
+\DeclareRobustCommand{\makeproposalcover}{
+  \begin{titlepage}
+    \vspace{1cm}
+    \begin{singlespace}
+    \begin{center}
+      \fontsize{18}{27}\selectfont
+      \@universityzh\@institutezh\par
+      \@instituteen\par
+      \@universityen\par
+      \vspace{\fill}
+      {\fontsize{18}{24}\selectfont
+        \@typezh{}\@classzh 提案\par 
+        \@typeen{} \@classen \ Proposal\par } 
+      \vspace{\fill}
+      {\fontsize{20}{24}\selectfont
+      \@titlezh\par
+      \@titleen\par}
+      \vspace{\fill}
+      指導教授：\@advisorzh\\
+      Advisor: \@advisoren\par
+       研究生:\@authorzh\\
+       \@authoren\par
+    \end{center}
+    \end{singlespace}
+    \vspace{1cm}
+  \end{titlepage}
+}
 
 \DeclareRobustCommand{\makecertification}{
   \clearpages

@@ -42,11 +42,12 @@
 % 政大論文浮水印
 \input{src/with-watermark.tex}
 
-\hypersetup{pageanchor=false}a
+\hypersetup{pageanchor=false}
 
-\frontmatter
-\pagenumbering{gobble}
-\makecover
+
+
+\makeproposalcover
+
 
 \clearpages
 \setcounter{page}{1}
@@ -54,43 +55,21 @@
 \pagenumbering{roman}
 \phantomsection
 
-% generate certification
-% \makecertification
-% or include scanned pdf
-\addcontentsline{toc}{chapter}{口試委員會審定書}
-\includepdf[pages={1}]{pdfs/cert.pdf}
-
-%\input{acknowledgements}
 \input{abstract}
 
 % Table of Content
 \clearpages
 \tableofcontents
-% List of Figures
-\clearpages
-\listoffigures
-% List of Tables
-\clearpages
-\listoftables
+
 
 \mainmatter
 
 % Your thesis goes here
 \input{chapters/introduction}
-\input{chapters/related}
+%\input{chapters/related}
 
+%\input{temp/temp}
 
-\input{temp/temp}
-%\input{chapters/systemmodel}
-%\input{chapters/algorithms}
-%\input{chapters/analysis}
-%\input{chapters/implementation}
-%\input{chapters/experiment}
-%\input{chapters/conclusion}
-
-\@startappendix
-
-\input{chapters/dataset}
 
 \backmatter
 
