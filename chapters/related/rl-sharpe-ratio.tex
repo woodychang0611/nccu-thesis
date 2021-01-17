@@ -1,5 +1,22 @@
 \section{Reinforcement Learning with Sharpe Ratio}
-\cite{618952}
+The goal of investors is to maximize profit or other utility. However, for the forecast system, the objective is minimizing the error between forecast and labeled ground truth, e.g., squared error. There are gaps between the forecast systems and the investors since their goals are not the same.
+Rather than systems build the portfolio upon a forecast system trained with labeled data, John Moody's trading system used reinforcement learning to construct the optimal portfolio from an objective function\cite{618952,moody1998performance}.
+\par
+Wealth or profit does not reflect investors' real goal since most investors are sensitive to risk. Psychologically, humans favor avoiding losses to acquire equivalent gains. This tendency is called Loss Aversion.\cite{kahneman2000analysis} Kahneman's study suggests losses are twice as powerful as gains\cite{Tversky1992}. Using a risk-adjusted utility function as the objective function, e.g., Sharpe Ratio will yield a better result than using wealth.
+\par
+Sharpe Ratio ratio is defined as 
+\[ SR = \frac{E(R_a - R_b)}{\sigma_a},
+\sigma_a = \sqrt{VAR(R_a-R_b)}\]
+where \(R_a\) is the return of the assert, 
+\(R_b\) is the risk-free return,
+\(E(R_a - R_b)\) is the expected excess return of the assert,
+and \(\sigma_a\) is standard deviation of the excess return.
+\par
+To 
+
+
+
+
 The differential Sharpe ratio \(D\) is defined as:
 \[
 \cfrac{d D_t}{d R_t} = 
