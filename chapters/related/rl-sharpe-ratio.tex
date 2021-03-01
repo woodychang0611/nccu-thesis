@@ -1,8 +1,8 @@
 \section{Reinforcement Learning with Sharpe Ratio}
-The goal of investors is to maximize profit or other utility. However, for the forecast system, the objective is minimizing the error between forecast and labeled ground truth, e.g., squared error. There are gaps between the forecast systems and the investors since their goals are not the same.
+The goal of investors is to maximize profit or other utility. However, for the forecast system, the objective is minimizing the error between forecast and labeled ground truth, e.g., squared error. Portfolio management systems using supervised forecast systems do not consider the effects of transaction costs, e.g. , tax and commission fees. Performance of such approach is suboptimal due to loss of information since the input to forecasts does not pass into the stage that produces the portfolio afterward.
 Rather than systems build the portfolio upon a forecast system trained with labeled data, John Moody's trading system used reinforcement learning to construct the optimal portfolio from an objective function\cite{618952,moody1998performance}.
 \par
-Wealth or profit does not reflect investors' real goal since most investors are sensitive to risk. Psychologically, humans favor avoiding losses to acquire equivalent gains. This tendency is called Loss Aversion.\cite{kahneman2000analysis} Kahneman's study suggests losses are twice as powerful as gains\cite{Tversky1992}. Using a risk-adjusted utility function as the objective function, e.g., Sharpe Ratio will yield a better result than using wealth.
+Wealth or profit does not reflect investors' real goal since most investors are sensitive to risk. Psychologically, humans favor avoiding losses to acquire equivalent gains. This tendency is called Loss Aversion.\cite{kahneman2000analysis} Kahneman's study suggests losses are twice as powerful as gains\cite{Tversky1992}. Using a risk-adjusted utility function as the objective function, e.g., Sharpe Ratio, will resemble investors' true objective better and yield results better than using wealth alone.
 \par
 Sharpe Ratio ratio is defined as 
 \[ SR = \frac{E(R_a - R_b)}{\sigma_a},
@@ -12,12 +12,10 @@ where \(R_a\) is the return of the assert,
 \(E(R_a - R_b)\) is the expected excess return of the assert,
 and \(\sigma_a\) is standard deviation of the excess return.
 \par
-To 
+Offline trading system that train in batch can use Sharpe ratio. 
+Online learning systems required influence on Sharpe ratio, an incremental Sharpe ratio, or differential Sharpe ratio.
 
-
-
-
-The differential Sharpe ratio \(D\) is defined as:
+The differential Sharpe ratio \(D\) is defined in the form:
 \[
 \cfrac{d D_t}{d R_t} = 
 \cfrac{B_{t-1}-A_{t-1} R_t}{(B_{t-1}-A_{t-1}^2)^\frac{3}{2}}
