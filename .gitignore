@@ -156,4 +156,4 @@ cython_debug/
 .vscode/
 
 #RLKit output
-**/rlkit_out/
+**/rlkit_out*/
