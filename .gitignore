@@ -157,3 +157,5 @@ cython_debug/
 
 #RLKit output
 **/rlkit_out*/
+
+code/output/*
