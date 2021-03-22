@@ -40,6 +40,8 @@
 \begin{document}
 
 % 政大論文浮水印
+
+\input{abstract}
 \input{src/with-watermark.tex}
 
 \hypersetup{pageanchor=false}
@@ -53,12 +55,13 @@
 \hypersetup{pageanchor=true}
 \pagenumbering{roman}
 \phantomsection
-
+\ClearWallPaper
 % generate certification
 % \makecertification
 % or include scanned pdf
 \addcontentsline{toc}{chapter}{口試委員會審定書}
 \includepdf[pages={1}]{pdfs/cert.pdf}
+
 
 %\input{acknowledgements}
 \input{abstract}
