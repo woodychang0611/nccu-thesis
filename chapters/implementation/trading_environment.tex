@@ -1,1 +1,16 @@
 \section{Trading Environment}
+We build a customized Open AI Gym environment that has two primary goals.
+\begin{itemize}
+\itemsep -1em  
+\item Translate domain-specific inputs into state/reward as inputs to the RL model
+\item Build the portfolio from the output of the RL model, action
+\end{itemize}
+\par
+The trading environment contains few major components.
+\begin{itemize}
+\itemsep -1em  
+\item Feature Extractor: Extract features from the market as part of states
+\item Portfolio Builder: Build the portfolio from investments and actions
+\item Trading System: Measure performances of the given portfolios
+\item Reward Provider: Provide reward from performances of the portfolio and investor preference
+\end{itemize}
