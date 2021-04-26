@@ -1,0 +1,7 @@
+\section{Reinforcement Learning Model}
+We used Soft Actor-Critic (SAC) \cite{haarnoja2018soft} provided in RLkit, an open-source RL framework implemented in PyTorch\cite{pongrlkit}, as our RL model.
+\par
+Soft Actor-Critic (SAC) is an algorithm that optimizes a stochastic policy in an off-policy way.
+Entropy regularization is the critical feature of SAC, which maximizes a trade-off between expected return and entropy, measuring randomness in the policy.
+\par
+SAC is highly sensitive to the scaling of the reward. If the reward scale is too small, the reward will fail to affect the model, and the policy will become nearly uniform. The model will learn quickly and become deterministic for reward scale too large, leaving no room for exploration.

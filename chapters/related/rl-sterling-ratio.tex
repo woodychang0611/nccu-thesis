@@ -1,2 +1,24 @@
 \section{Reinforcement Learning with Sterling Ratio}
-\cite{moody1998performance}
+Moody extends his works to use  Sterling Ratio as the utility function \cite{moody1998performance}, defined as 
+\[
+Sterling Ratio=\frac{Annualized Average Return}{Maximum Drawdown}
+\]
+
+However, since Maximum Drawdown is cumbersome to minimize, Moody used DD instead, the square root of the average of the
+square of the negative returns, defined as
+\[
+DD_T = \sqrt{\cfrac{1}{T}\sum_{t=0}^{T}{min\{R_T,0\}^2}}
+\]
+Sterling Ratio than can be replaced by downside deviation ratio (DDR)
+\[
+DDR_T = \frac{Average(R_T)}{DD_T}
+\]
+The reward function will use the differential form of the utility function \(D_t\).
+\[
+D_t = 
+\begin{cases}
+    \cfrac{R_{t-1} -\frac{1}{2}A_{t-1}}{DD_{t-1}},&\text{if  }R_t > 0\\
+    \cfrac{DD_{t-1}^2 (R_{t-1}-\frac{1}{2}A_{t-1})  -\frac{1}{2}A_{t-1} R_t^2}{DD_{t-1}^3},&\text{if  }R_t \leq 0
+\end{cases}
+\]
+Unlike utility functions that use variance as the risk-adjusted factor, this formula indicates no penalty for large positive returns. 
