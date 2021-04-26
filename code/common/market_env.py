@@ -128,11 +128,11 @@ class MarketEnv(gym.Env):
         self.wealth = np.dot(self.investments, (1 + inv_return))
         self.profit = (self.wealth - previous_wealth)/previous_wealth
 
-        self.max_weath = max(self.wealth, self.max_weath)
-        self.drawdown = max(0, (self.max_weath - self.wealth) / self.max_weath)
-        self.max_drawdown = max(self.max_drawdown, self.drawdown)
-        self.mean = (self.mean * (self.episode-1) + self.profit)/self.episode
-        self.mean_square = (self.mean_square * (self.episode-1) + self.profit ** 2)/self.episode
+        self.max_weath =0# max(self.wealth, self.max_weath)
+        self.drawdown =0# max(0, (self.max_weath - self.wealth) / self.max_weath)
+        self.max_drawdown = 0#max(self.max_drawdown, self.drawdown)
+        self.mean =0# (self.mean * (self.episode-1) + self.profit)/self.episode
+        self.mean_square =0# (self.mean_square * (self.episode-1) + self.profit ** 2)/self.episode
 
         # todo define new reward function
         reward = self.reward_func(self)
@@ -159,7 +159,7 @@ class MarketEnv(gym.Env):
         self.investments = np.zeros(self.investments_count)
         self.weights = np.zeros(self.investments_count)
         self.wealth = 1
-        self.max_weath = self.wealth
+        self.max_weath =0# self.wealth
         self.max_drawdown = 0
         self.mean = 0
         self.mean_square = 0
@@ -177,13 +177,7 @@ class MarketEnv(gym.Env):
         current_date = self.returns.index[self.current_index]
         trade_days = (current_date-start_date).days
         cagr = math.pow(self.wealth, 365/trade_days) - 1
-        if (self.episode == 1):
-            std = 0
-        else:
-            k = ((self.episode)/(self.episode-1))**0.5
-            a = self.mean
-            b = self.mean_square
-            std = k*(b-a**2)**0.5
+        std=0
 
         info = {
             'trade_days': trade_days,
