@@ -12,7 +12,7 @@ The reward R will be a real number without any other constraint.
 \[
     R \in \mathbb{R}
 \]
-The trading environment will represent the portfolio W in an m dimension vector space of real numbers between 0 and 1 with the sum equal to 1, where m is the number of investments in the investment universe.
+The trading environment will represent the portfolio W in an m dimension vector space of weights w, a real number between 0 and 1. , where m is the number of investments in the investment universe. The sum of the portfolio will equal 1.
 \[
     W = \{ {w \in \mathbb{R} | 0 \leq s \leq 1 } \} ^m,
     \\
@@ -21,19 +21,18 @@ The trading environment will represent the portfolio W in an m dimension vector 
 \par
 The trading environment contains few components, State Extractor, Portfolio Builder, Trading System, and the Reward Provider to archive its objectives.
 
-\subsection {State Extractor}
-The State Extract extracts states from the features. 
-The first steps is to normalize the input features to mean 0 and standard division \(Scale_{state}\),
+\subsection {Feature Extractor}
+The Feature Extractor extracts states from the features. 
+The first step is to normalize the input features to mean 0 and standard division \(Scale_{state}\),
 \[
     f^{'}_{n,t} = \frac{f_{n,t} -  mean(f_n)}{VAR(f_n)}*Scale_{state} 
 \]
 
-During experiment, we observed the difference of performance , in terms of CAGR, between training and validation is significant. As we assume over-fit is one of the cause, we include a normal distributed noise \(\mathcal{N}\)in into the state as one approach of data augmentation to reduce over-fit.
+We observed that the difference in performance between training and validation is significant in terms of CAGR during our experiment. As we assume over-fit is one of the causes, we include noise in Gaussian distribution \(\mathcal{N}\)in into the state as an approach of data augmentation to reduce over-fit.
 \[
     s_{n,t} = f^{'}_{n,t} + \mathcal{N}(0,Scale_{noise})
 \]
-The validation results improvement significantly after extra noise is added.
-We also experiment the model with pure noise to prove the result is cause not just by noise, but the feature also.
+The validation results improved significantly after adding noise to the states. We also experiment with the model with pure noise to prove that the performance results from the combined effort of both noises and the features.
 \begin{figure}[ht]
   \includegraphics[width=15cm]{images/compare_noise.png}
   \caption{Comparison of using features with noise, features without noise, and noise only as states in terms of training/validation CAGR (moving average 50 Epochs)}
