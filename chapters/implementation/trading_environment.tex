@@ -23,19 +23,19 @@ The trading environment contains few components, State Extractor, Portfolio Buil
 
 \subsection {Feature Extractor}
 The Feature Extractor extracts states from the features. 
-The first step is to normalize the input features to mean 0 and standard division \(Scale_{state}\),
+The first step is to normalize the input features to mean 0 and standard division \(\sigma_{state}\),
 \[
-    f^{'}_{n,t} = \frac{f_{n,t} -  mean(f_n)}{VAR(f_n)}*Scale_{state} 
+    f^{'}_{i,t} = \frac{\sigma_{state}  (f_{i,t} -  mean(f_i))}{\sigma_{f_i}}
 \]
 
-We observed that the difference in performance between training and validation is significant in terms of CAGR during our experiment. As we assume over-fit is one of the causes, we include noise in Gaussian distribution \(\mathcal{N}\)in into the state as an approach of data augmentation to reduce over-fit.
+We observed that the difference in performance between training and validation is significant in terms of CAGR during our experiment. We assume overfitting is one of the causes, so we include noise in Gaussian distribution with mean 0 and variance \(\sigma_{noise}^2\) \(\mathcal{N}(0,\sigma_{noise}^2)\) into the state as an approach of data augmentation to reduce overfitting.
 \[
-    s_{n,t} = f^{'}_{n,t} + \mathcal{N}(0,Scale_{noise})
+    s_{i,t} = f^{'}_{i,t} + \mathcal{N}(0,\sigma_{noise}^2)
 \]
-The validation results improved significantly after adding noise to the states. We also experiment with the model with pure noise to prove that the performance results from the combined effort of both noises and the features.
+The validation results improved significantly after adding noise to the states. We also experiment with the model with pure noise. Both training and validation have trivial improvement. This proves that the performance of features and noises results from the combined effort of both noises and the features, not noises alone.
 \begin{figure}[ht]
   \includegraphics[width=15cm]{images/compare_noise.png}
-  \caption{Comparison of using features with noise, features without noise, and noise only as states in terms of training/validation CAGR (moving average 50 Epochs)}
+  \caption{Comparison of using features only, , features with noise, and noise only as states in terms of training and validation CAGR (moving average 50 epochs)}
   \label{fig:noise_diagram}
 \end{figure}
 
