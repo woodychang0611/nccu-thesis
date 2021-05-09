@@ -68,7 +68,7 @@ Where \(R_t\) is the reward, \(p_t\) is the profit and \(w_t\) is the wealth on 
 \\
 On all threshold \(\theta\) given, the result shows unstable improvement in MDD. We observed that the optimization goes too well during training and generates a tiny amount of negative profits; therefore, these negative profits have minimal penalty effect on the model parameters.
 \\
-We than apply the plenty on both positive and negative profits. This increase the stabliltiy signifantly.
+We then apply the penalty upon both positive and negative profits. This increases the stability significantly.
 \[
 R_t = 
 \begin{cases}
@@ -81,6 +81,6 @@ R_t =
 
 \begin{figure}[ht]
   \includegraphics[width=15cm]{images/penalty_negtive_profits_compare.png}
-  \caption [Comparison of penalty all profits and negative profits only] {Comparison of XXXXX in terms of training and validation MDD (moving average 50 epochs)}
+  \caption [Comparison of penalty all profits and negative profits only] {Comparison of penalty upon negative profits and all profits in terms of training and validation MDD (moving average 50 epochs)}
   \label{fig:negtive_profits_diagram}
 \end{figure}
