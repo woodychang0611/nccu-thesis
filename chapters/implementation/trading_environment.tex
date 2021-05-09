@@ -54,7 +54,7 @@ where \(F_i\) is the weight for \(i^{th}\) investment, \(a_i\) is the  \(i^{th}\
 \subsection {Trading System}
 The trading system measures performances of the given portfolios, including MDD, CAGR, profit, and wealth. These performances will be the input to calculate the reward or evaluate the performance of the system. 
 \subsection {Reward Provider}
-The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first introduce a reward equal to the profit p, with plenty upon negative profits exceeding the given absolute value threshold \(\theta\). 
+The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first introduce a reward equal to the profit p, with , penalty upon negative profits exceeding the given absolute value threshold \(\theta\). 
 \[
 p_t = \frac{w_t-w_{t-1}}{w_{t-1}}
 , 
@@ -66,7 +66,7 @@ R_t =
 \]
 Where \(R_t\) is the reward, \(p_t\) is the profit and \(w_t\) is the wealth on given t.
 \\
-On all threshold \(\theta\) given, the result shows no improvement in MDD. We observed that the optimization goes too well during training and generates a tiny amount of negative profits; therefore, these negative profits have minimal effect on the model parameters.
+On all threshold \(\theta\) given, the result shows unstable improvement in MDD. We observed that the optimization goes too well during training and generates a tiny amount of negative profits; therefore, these negative profits have minimal penalty effect on the model parameters.
 \\
 We than apply the plenty on both positive and negative profits.
 \[
@@ -76,3 +76,11 @@ R_t =
     p_t - \theta ,&\text{if  } $$|p_t|$$\leq  \theta
 \end{cases}
 \]
+
+
+
+\begin{figure}[ht]
+  \includegraphics[width=15cm]{images/penalty_negtive_profits_compare.png}
+  \caption [Comparison of features/noise] {Comparison of using features only, features with noises, and noises only as states in terms of training and validation CAGR (moving average 50 epochs)}
+  \label{fig:noise_diagram}
+\end{figure}
