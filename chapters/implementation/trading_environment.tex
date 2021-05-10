@@ -54,7 +54,7 @@ where \(F_i\) is the weight for \(i^{th}\) investment, \(a_i\) is the  \(i^{th}\
 \subsection {Trading System}
 The trading system measures performances of the given portfolios, including MDD, CAGR, profit, and wealth. These performances will be the input to calculate the reward or evaluate the performance of the system. 
 \subsection {Reward Provider}
-The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first introduce a reward equal to the profit p, with a penalty upon negative profits exceeding the given absolute value threshold \(\theta\). 
+The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first use profit p as the baseline for the reward and add a penalty upon negative profits exceeding the given absolute value threshold \(\theta\). 
 \[
 p_t = \frac{w_t-w_{t-1}}{w_{t-1}}
 , 
