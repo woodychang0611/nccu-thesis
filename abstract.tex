@@ -1,9 +1,11 @@
+\begin{abstractzh}
+我們導入了一個具可調整風險偏好之深度強化學習資產配置系統。透過變更門檻參數，此系統可提供適合不同風險容忍度的投資者合適的投資組合。實驗結果顯示此系統在多數情況最大跌幅和年畫報酬上皆優於固定比重投資組合。
+相同的做法也可用於其他投資者偏好，例如Black-Litterman模型中的投資者觀點\cite{black1992global}。 
+
+\end{abstractzh}
+
 \begin{abstracten}
-Requirements for portfolio management is different among different investors. Risk is one of the critical factors. Max Drawdown (MDD), the maximum observed loss from a peak to a trough of a portfolio, is a commonly used risk indicator. Reinforcement Learning (RL) is a promising machine learning approach for portfolio selection. Instead of using investment return as a reward function directly, many models use indicators that have taken variability into account, like Sharpe Ratio \cite{Sharpe49} or Sterling ratio. However, neither Sharpe ratio nor Sterling ratio has inputs to raise or reduce risk's influence upon the reward function. Therefore the model using Sharpe Ratio \cite{Sharpe49} or Sterling ratio cannot reflect the needs of investor types with different tolerance to risk.
-
-\par
-This thesis introduces a reinforcement learning reward function for portfolio management that incorporates different risk levels represented in target maximum drawdown.
-
-\noindent
-Keywords: Reinforcement Learning, Max Drawdown, Portfolio Management,
+We introduced a DRL-based portfolio management system with adjustable risk preference. The system can produce portfolio s that meet different investors' risk tolerance by adjusting the threshold parameter. The experiment results show our system outperformed the constant rebalanced portfolio (CRP) in terms of maximum drawdown (MDD) and Compound annual growth rate (CAGR). The same approach has the potential to apply to different investors' preferences, like the opinion of the investor used in the Black–Litterman model\cite{black1992global}. 
 \end{abstracten}
+
+
