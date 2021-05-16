@@ -54,7 +54,7 @@ where \(F_i\) is the weight for \(i^{th}\) investment, \(a_i\) is the  \(i^{th}\
 \subsection {Trading System}
 The trading system measures performances of the given portfolios, including MDD, CAGR, profit, and wealth. These performances will be the input to calculate the reward or evaluate the performance of the system. 
 \subsection {Reward Provider}
-The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first introduce a reward equal to the profit p, with a penalty upon negative profits exceeding the given absolute value threshold \(\theta\). 
+The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first use profit p as the baseline for the reward and add a penalty, \(p_t-\theta\), upon negative profits exceeding the given absolute value threshold \(\theta\). 
 \[
 p_t = \frac{w_t-w_{t-1}}{w_{t-1}}
 , 
@@ -64,7 +64,7 @@ R_t =
     2p_t - \theta ,&\text{if  }p_t \leq  \theta
 \end{cases}
 \]
-Where \(R_t\) is the reward, \(p_t\) is the profit and \(w_t\) is the wealth on given t.
+where \(R_t\) is the reward, \(p_t\) is the profit and \(w_t\) is the wealth on given t.
 \\
 On all threshold \(\theta\) given, the result shows unstable improvement in MDD. We observed that the optimization goes too well during training and generates a tiny amount of negative profits; therefore, these negative profits have minimal penalty effect on the model parameters.
 \\
@@ -76,9 +76,12 @@ R_t =
     p_t - \theta ,&\text{if  } $$|p_t|$$\leq  \theta
 \end{cases}
 \]
-
+The threshold \(\theta\) will be the main adjustable parameter of our system. Adjusting it will enable the system to produce portfolios to meet different investors' risk tolerance.
+\\
+\\
 \begin{figure}[ht]
   \includegraphics[width=15cm]{images/penalty_negtive_profits_compare.png}
   \caption [Comparison of penalty all profits and negative profits only] {Comparison of penalty upon negative profits and all profits in terms of training and validation MDD (moving average 50 epochs)}
   \label{fig:negtive_profits_diagram}
 \end{figure}
+
