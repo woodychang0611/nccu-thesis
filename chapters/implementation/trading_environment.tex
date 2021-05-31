@@ -27,12 +27,12 @@ The first step is to normalize the input features to mean 0 and standard divisio
     f^{'}_{i,t} = \frac{\sigma_{state} \times   (f_{i,t} -  \overline{f_i})}{\sigma_{f_i}}
 \]
 
-We observed that the difference in performance between training and validation is significant in terms of Compound annual growth rate (CAGR) during our experiment. We assume overfitting is one of the causes, so we include noise in Gaussian distribution with mean 0 and variance \(\sigma_{noise}^2\) \(\mathcal{N}(0,\sigma_{noise}^2)\) into the state as an approach of data augmentation to reduce overfitting.
+We observed that the difference in performance between training and validation is significant in terms of Compound annual growth rate (CAGR) during our experiment. We assume overfitting is one of the causes, so we include noise in Gaussian distribution with mean 0 and variance \(\sigma_{noise}^2\), \(\mathcal{N}(0,\sigma_{noise}^2)\) into the state as an approach of data augmentation to reduce overfitting.
 \[
     s_{i,t} = f^{'}_{i,t} + \mathcal{N}(0,\sigma_{noise}^2)
 \]
-The validation results improved significantly after adding noise to the states. We also experiment with the model with pure noise. Both training and validation have trivial improvement. This proves that the performance of features and noises results from the combined effort of both noises and the features, not noises alone.
-\begin{figure}[ht]
+The validation results improved significantly after adding noise to the states. We also experiment with the model with pure noise. Both training and validation have trivial improvement. This proves that the performance of features and noises results from the combined effort of both noises and the features, not noises alone (\autoref{fig:noise_diagram}). 
+\begin{figure}[htb]
   \includegraphics[width=15cm]{images/compare_noise.png}
   \caption [Comparison of features/noise] {Comparison of using features only, features with noises, and noises only as states in terms of training and validation CAGR (moving average 50 epochs)}
   \label{fig:noise_diagram}
@@ -77,11 +77,16 @@ R_t =
 \end{cases}
 \]
 The threshold \(\theta\) will be the main adjustable parameter of our system. Adjusting it will enable the system to produce portfolios to meet different investors' risk tolerance.
-\\
-\\
 \begin{figure}[ht]
   \includegraphics[width=15cm]{images/penalty_negtive_profits_compare.png}
   \caption [Comparison of penalty all profits and negative profits only] {Comparison of penalty upon negative profits and all profits in terms of training and validation MDD (moving average 50 epochs)}
   \label{fig:negtive_profits_diagram}
 \end{figure}
+\\
+\\
+\\
+\\
+\\
+\\
+
 
