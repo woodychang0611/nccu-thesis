@@ -1,0 +1,7 @@
+\section{Reinforcement Learning Model}
+As our action spaces are continuous, we will not use Value function-based DRL algorithms, e.g., DQN, since the output stage will be enormous. We have limited sample data since we will use real-world data, not data from a simulation environment. We will rule out on-policy algorithms as it is beneficial to use an experience replay set to utilize the sample efficiently.
+\par
+Based on the requirements above, we have DDPG, TD3, and SAC as our candidates. We use SAC as our DRL model since it optimizes a stochastic policy with entropy regularization, reducing the chances of the system trapped in local optimal and balance the exploration-exploitation dilemma.
+
+We used SAC \cite{haarnoja2018soft} provided in RLkit, an open-source RL framework implemented in PyTorch\cite{pongrlkit}, as our RL model.
+\

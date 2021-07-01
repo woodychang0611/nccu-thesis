@@ -1,0 +1,19 @@
+\section{Dataset}
+\subsection{Data Collection}
+We collected the historical adjusted closed prices of EFTs (\autoref{appendix:etfs_corr}) and market features (\autoref{appendix:features_list}) between 2007/4/20 til  2021/3/15 from Yahoo Finance and Federal Reserve Economic Data. We use data before 2017/2/28 as the training data and the rest as validation data.
+\begin{table}[ht]
+    \centering
+        \begin{tabular}{|c|c|c|c|}
+        \hline \hline
+        Data Type & Start Time & End Time & Period (Year) \\ \hline
+        Training Data  &  2007/4/20 & 2017/2/28 & 9.87\\ \hline
+        Validation Data & 2017/3/1 & 2021/3/15 & 4.04 \\ 
+        \hline \hline
+        \end{tabular}
+    \caption{Data Collection Period}
+    \label{tab:dataset}
+\end{table}
+
+
+\subsection{Data Processing}
+The data we collected are structured data; we only need to fill the missing data with the nearest pass data and calculate statistics measures for non-stationary data.  All data processed are stored in files for further usage to improve efficiency. 

@@ -1,0 +1,23 @@
+\section {Hyper Parameter}
+We keep all hyperparameters as their default value in the original SAC paper\cite{haarnoja2018soft}, except the reward scale.
+SAC is highly sensitive to the scaling of the reward. If the reward scale is too small, the reward will fail to affect the model, and the policy will become nearly uniform. The model will learn quickly and become deterministic for the reward scale too large, leaving no room for exploration.
+\par
+\begin{table}[ht]
+    \centering
+    \begin{tabular}{| c|c | }
+   \hline \hline
+   Parameter & Value \\ \hline \hline
+   Optimizer & Adam \\ \hline
+   Learning rate & \(3 10^{-4}\) \\ \hline
+   Replay size & \(10^6\) \\ \hline
+   Hidden layer&   256X256  \\ \hline
+   Discount & 0.99 \\ \hline
+   Target smoothing coefficient & 0.005 \\ \hline
+   Target update interval & 1 \\ \hline
+   Gradient steps & 1 \\ \hline
+   Reward scale & \(\mathbf{1000}\) \\ \hline
+   \hline\hline
+    \end{tabular}
+    \caption{DRL model Hyperpareters}
+    \label{tab:hyperpareters}
+\end{table} 
