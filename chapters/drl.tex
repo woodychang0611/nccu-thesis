@@ -64,7 +64,13 @@ After comparing the characteristics of each DRL algorithm, we choose SAC for our
 \section{Soft Actor-Critic}
 Soft Actor-Critic (SAC) is an DRL algorithm that optimizes a stochastic policy in an off-policy way with entropy regularization.
 \subsection{Actor-Critic}
-Actor-Critic uses both the Value Function and the Policy. The actor determines the actions with the policy. The critic uses the value function to criticize the actor's action and output the Temporal-difference (TD) error. Both the value function model and the policy model will train upon the TD error. 
+Actor-Critic uses both the Value Function and the Policy. The actor determines the actions with the policy. The critic uses the value function to criticize the actor's action and output the Temporal-difference (TD) error. Both the value function model and the policy model will train upon the TD error.
+\begin{figure}[htb]
+    \centering
+    \includegraphics[width=10cm]{images/actor_critic.png}
+    \caption{Actor-Critic Overview}
+    \label{fig:actor-critic}
+\end{figure}
 
 \subsection{Entropy Regularization}
 Entropy Regularization balances the exploration-exploitation trade-off as the algorithm favors exploration when the entropy is high initially and becomes more deterministic when entropy is low to increase exploitation.
