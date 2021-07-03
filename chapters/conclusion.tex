@@ -1,9 +1,20 @@
 \chapter{Conclusions and Extensions}
 \label{c:conclusion}
 \section{Conclusions}
-The experiment results demonstrate that the system can successfully build portfolios with different MDD upon the same validation period using various thresholds. Including noises in the features plays a vital role in avoiding over-fitting and improve the performance during validation. Intuitionally, apply penalties against drop only should produce a better result. However, this experiment shows unstable performance. The cause could be lacking negative returns sample during training could be the cause.
 
 
+The experiment results demonstrate that the system meets our objective successfully. 
+For the first objective, provide a parameter to incorporate investors' risk preferences; we can include investors' risk preferences using the threshold parameter $\theta$ to produce portfolios with different risks represented in MDD.
+The performance of our model exceeded CRP in CAGR and MDD for most cases and achieve the second objective.
+\par
+Including noises in the features plays a vital role in avoiding over-fitting and improve the performance during validation. Intuitionally, apply penalties against drop only should produce a better result. However, this experiment shows unstable performance. The cause could be lacking negative returns sample during training could be the cause.
+\\
+\\
+\\
+\\
+\\
+\\
+\\
 \section{Extensions}
 
 There are many opportunities to enhance to optimize the reward function. Due to the uncertainty of the finance market, our system can provide a qualitative result. Dynamic adjusting the threshold with investors' preferences and the status of the market could give a more predictable and reliable performance.

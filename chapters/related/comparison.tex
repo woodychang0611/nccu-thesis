@@ -1,0 +1,19 @@
+\section{Comparison}
+MPT uses historical data of individual investments to forecast future returns and risks. Portfolio meets investor's risk preferences is available by using the efficiency frontier.
+\par
+RL-based portfolio management systems can use alternative inputs from other sources, including indices representing short-term or longer-term situations. However, it is a challenge for RL-based portfolio management systems to produce portfolios that meet investor's risk preferences like MPT as the parameter to represent investor's risk preferences is missing. 
+\par
+We aim to close the gap by introducing a DRL portfolio management system with adjustable risk preferences.
+\begin{table}[hbt]
+    \centering
+    \begin{tabular}{| c| c | c | }
+    \hline \hline
+    Portfolio Management System & Adjustable risk preferences & Alternative input sources \\     \hline \hline
+    MPT & Yes & No \\  \hline
+    RL with Sharpe/Sterling ratio& No & Yes  \\  \hline
+    Proposed System & Yes & Yes \\  \hline
+     \hline \hline
+    \end{tabular}
+    \caption{Comparison of Portfolio Management System}
+    \label{tab:comparison_portfolio_system}
+\end{table}
