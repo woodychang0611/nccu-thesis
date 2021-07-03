@@ -1,10 +1,11 @@
 \section{Overview}
-
-
-\begin{figure}[h]
+\autoref{fig:context_diagram} represents the overview and workflow of our proposed DRL-based Portfolio Management System.
+The system will output portfolios based on the inputs, the market the investment universe, and investor preference. 
+\par
+The system contains two main parts, the DRL model and the trading environment. We will detail discuss about them in \autoref{c:drl} and \autoref{c:trading_environment}. The trading environment bridges domain-specific inputs/outputs with the general-purpose DRL model. This architecture enables the system to function with most existing DRL models with ease. 
+ 
+\begin{figure}[hbt]
   \includegraphics[width=15cm]{images/context_diagram.png}
   \caption{Context Diagram}
   \label{fig:context_diagram}
 \end{figure}
-\par
-The RL-based Portfolio Management System contains two main parts, the training environment and the RL model. The trading environment bridges domain-specific inputs/outputs with the general-purpose RL model. This architecture enables the system to output the portfolio based on the inputs, the market, the investments, and the investor preference with most existing RL models.

@@ -26,10 +26,10 @@ To verify the robustness of our system, we validate our system on two validation
 
 
 
-\subsection{Baseline}
-A Constant rebalanced portfolio (CRP) is an investment strategy that keeps a constant ratio between all investments over time. We use this to represent the portfolio provided by advisors to meet investors' risk preferences. We will use the average ratio of our portfolio to build a CRP portfolio and use it as a baseline for performance comparison in MDD and CAGR.
-\subsection{Threshold}
-We will test three different thresholds to represent risk preferences.  
+
+\subsection{System Parameter}
+The threshold is the only adjusted parameter in the system.
+We use three thresholds to represent different risk preferences.  
 \begin{table}[htb]
     \centering
     \begin{tabular}{||c|c||}
@@ -42,6 +42,9 @@ We will test three different thresholds to represent risk preferences.
     \caption{Threshold and Risk Preferences}
     \label{tab:threshold}
 \end{table}
+
+\subsection{Baseline}
+A Constant rebalanced portfolio (CRP) is an investment strategy that keeps a constant ratio between all investments over time. We use this to represent the portfolio provided by advisors to meet investors' risk preferences. We will use the average ratio of our portfolio to build a CRP portfolio and use it as a baseline for performance comparison in MDD and CAGR.
 \subsection{Result}
 Our system successfully delivers portfolios with different MDD to meet various investors' preferences, and output performed CRP in MDD and CAGR in most situations.
 
