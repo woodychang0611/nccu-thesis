@@ -1,2 +1,10 @@
 \section{Investor Preference}
-For investor preference, we will focus on the risk aversion of the investors. Usually, professional personnel or organization will acquire risk aversion from investors by survey or other techniques and interprets the inputs into comparable indicators between investors. Our system will use these indicators as the goal to build the portfolios to meet investor risk aversion. MDD as be one of the indicators to evaluate our system. However, optimizing any ratio using MDD directly has many problems and challenges. Some researches indicate MDDs are outliers \cite {johansen2002large, johansen1998stock} or imply optimizing MDD is troublesome \cite{moody1998performance}. Therefore, we will not limit ourselves to use MDD while optimizing the model and consider other alternatives. 
+For investor preference, we will focus on the risk preference of the investors. Usually, professional personnel or organization will acquire risk preference from investors by survey or other techniques and interprets the inputs into comparable risk measure indicators between investors. 
+\subsubsection{Risk Measure}
+Risk is an abstract concept, and there are many indicators to represent the risk. Our system will use these indicators as the goal to build the portfolios to meet investor risk aversion.  
+\subsubsection{Standard Deviation}
+We can measure the volatility of the return with the standard deviation. The well known Sharpe Ratio uses the standard deviation to represent a risk. The downside for the standard deviation of return is assets that produce a blooming return that most investors seek will also yield a high standard deviation.
+\subsubsection{Maximum Drawdown}
+Drawdown is the decline from the highest peak. Maximum drawdown (MDD) is the maximum decline over the given period and reflects the actual loss of the investors. We use MDD as be one of the indicators to evaluate our system. 
+\par
+However, optimizing any ratio using MDD directly has many problems and challenges. Some researches indicate MDDs are outliers \cite {johansen2002large, johansen1998stock} or imply optimizing MDD is troublesome \cite{moody1998performance}. Therefore, we will not limit ourselves to use MDD while optimizing the model and consider other alternatives. 
