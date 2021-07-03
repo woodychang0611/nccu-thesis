@@ -1,22 +1,19 @@
 \chapter{Conclusions and Extensions}
 \label{c:conclusion}
 \section{Conclusions}
-
-
-The experiment results demonstrate that the system meets our objective successfully. 
-For the first objective, provide a parameter to incorporate investors' risk preferences; we can include investors' risk preferences using the threshold parameter $\theta$ to produce portfolios with different risks represented in MDD.
-The performance of our model exceeded CRP in CAGR and MDD for most cases and achieve the second objective.
+The experiment results demonstrate that the system accomplishes both two objectives in \autoref{c:objective},
 \par
-Including noises in the features plays a vital role in avoiding over-fitting and improve the performance during validation. Intuitionally, apply penalties against drop only should produce a better result. However, this experiment shows unstable performance. The cause could be lacking negative returns sample during training could be the cause.
-\\
-\\
-\\
-\\
-\\
-\\
-\\
-\section{Extensions}
+For the first objective, provide a parameter to incorporate investors' risk preferences; we delivered portfolios with different risks in terms of MDD to meet investors' risk preferences by using the threshold parameter $\theta$.
+\par
+The performance of our model exceeded CRP in CAGR and MDD significantly for most cases and achieve the second objective, outperforming the CRP portfolio.
+\par
+We also observed some important observations worth mentioning.
+\begin{itemize}
+    \item Including noises in the features plays a vital role in avoiding over-fitting and improve the performance during validation. 
+    \item Intuitionally, apply penalties against drop only should produce a better result. However, this experiment shows unstable performance. The cause could be lacking negative returns sample during training could be the cause.
+\end{itemize}
 
+\section{Extensions}
 There are many opportunities to enhance to optimize the reward function. Due to the uncertainty of the finance market, our system can provide a qualitative result. Dynamic adjusting the threshold with investors' preferences and the status of the market could give a more predictable and reliable performance.
 
 As we focus on the reward function to the DRL model, we use vanilla complement for the rest of the system. Improving them will have great potential to enhance the performance of the system. For example, there is room to improve feature processing or selection of the investment universe.

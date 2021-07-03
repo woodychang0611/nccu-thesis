@@ -1,4 +1,23 @@
 \section{Experiment}
+
+\subsection{System Parameter}
+The threshold is the only adjusted parameter in the system.
+We use three thresholds to represent different risk preferences.  
+\begin{table}[htb]
+    \centering
+    \begin{tabular}{||c|c||}
+    \hline \hline
+    Threshold $\theta$ & Risk Preference \\ \hline
+    No plenty ($\infty$) & High \\ \hline
+    0.006 & Medium      \\ \hline
+    0.002 & Low      \\ \hline \hline
+    \end{tabular}
+    \caption{Threshold and Risk Preferences}
+    \label{tab:threshold}
+\end{table}
+\subsection{Trading Frequency}
+Our trading frequency is weekly. Compare to trading daily, reducing the trading frequency will reduce the impact of trading fees and slippage.
+
 \subsection{Validation Period}
 To verify the robustness of our system, we validate our system on two validation periods with different characteristics. Both validation periods have at least on significant decline period to prove our system regulates MDD.
 \begin{table}[htb]
@@ -17,36 +36,21 @@ To verify the robustness of our system, we validate our system on two validation
     \caption{Validation Period}
     \label{tab:validation_period}
 \end{table}
-\begin{figure}
+\begin{figure}[htb]
     \centering
     \includegraphics[width=15cm]{images/sp500.png}
     \caption{S\&P 500 of validation period}
     \label{fig:my_label}
 \end{figure}
 
-
-
-
-\subsection{System Parameter}
-The threshold is the only adjusted parameter in the system.
-We use three thresholds to represent different risk preferences.  
-\begin{table}[htb]
-    \centering
-    \begin{tabular}{||c|c||}
-    \hline \hline
-    Threshold $\theta$ & Risk Preference \\ \hline
-    No plenty ($\infty$) & High \\ \hline
-    0.006 & Medium      \\ \hline
-    0.002 & Low      \\ \hline \hline
-    \end{tabular}
-    \caption{Threshold and Risk Preferences}
-    \label{tab:threshold}
-\end{table}
-
 \subsection{Baseline}
 A Constant rebalanced portfolio (CRP) is an investment strategy that keeps a constant ratio between all investments over time. We use this to represent the portfolio provided by advisors to meet investors' risk preferences. We will use the average ratio of our portfolio to build a CRP portfolio and use it as a baseline for performance comparison in MDD and CAGR.
 \subsection{Result}
 Our system successfully delivers portfolios with different MDD to meet various investors' preferences, and output performed CRP in MDD and CAGR in most situations.
+
+
+
+
 
 \begin{figure}[htb]
 \centering
