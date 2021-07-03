@@ -1,5 +1,7 @@
 \section {Hyper Parameter}
-We keep all hyperparameters as their default value in the original SAC paper\cite{haarnoja2018soft}, except the reward scale.
+As the default hyperparameters of SAC, except reward scale, produces good results on various environments in the original paper\cite{haarnoja2018soft}.  
+We only adjusted the reward scale and kept the rest as default.
+\par
 SAC is highly sensitive to the scaling of the reward. If the reward scale is too small, the reward will fail to affect the model, and the policy will become nearly uniform. The model will learn quickly and become deterministic for the reward scale too large, leaving no room for exploration.
 \par
 \begin{table}[ht]
