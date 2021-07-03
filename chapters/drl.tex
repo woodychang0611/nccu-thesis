@@ -52,9 +52,9 @@ After comparing the characteristics of each DRL algorithm, we choose SAC for our
     \hline\hline
         Algorithm & Value/Policy Optimization & On/Off-Policy & Determinisitc/Stochastic Policy  \\ \hline
         DQN	& Value Optimization   & \color{blue} {Off-Policy} & NA \\ \hline
-        TRPO/PPO &	{blue} {Policy Optimization} &	On-Policy &	\color{blue} {Stochastic} \\ \hline
-        DDPG/TD3 &	{blue} {Policy Optimization} &	\color{blue} {Off-Policy}  &	Determinisitc \\ \hline
-        \color{blue}{SAC}	& \color{blue} {Policy Optimization} &	\color{blue} {Off-Policy} & \color{blue} {Stochastic} \\ \hline
+        TRPO/PPO &	\color{blue} {Policy Optimization} &	On-Policy &	\color{blue} {Stochastic} \\ \hline
+        DDPG/TD3 &	\color{blue} {Policy Optimization} &	\color{blue} {Off-Policy}  &	Determinisitc \\ \hline
+        SAC	& \color{blue} {Policy Optimization} &	\color{blue} {Off-Policy} & \color{blue} {Stochastic} \\ \hline
     \hline\hline
     \end{tabular}
     \caption{Comparison or DRL algorithm}
@@ -64,7 +64,7 @@ After comparing the characteristics of each DRL algorithm, we choose SAC for our
 \section{Soft Actor-Critic}
 Soft Actor-Critic (SAC) is an DRL algorithm that optimizes a stochastic policy in an off-policy way with entropy regularization.
 \subsection{Actor-Critic}
-Actor-Critic uses both the Value Function and the Policy. The actor determines the actions with the policy. The critic uses the value function to criticize the actor's action. Actor-Critic can have high sample efficiency with continuous action spaces.
+Actor-Critic uses both the Value Function and the Policy. The actor determines the actions with the policy. The critic uses the value function to criticize the actor's action and output the Temporal-difference (TD) error. Both the value function model and the policy model will train upon the TD error. 
 
 \subsection{Entropy Regularization}
 Entropy Regularization balances the exploration-exploitation trade-off as the algorithm favors exploration when the entropy is high initially and becomes more deterministic when entropy is low to increase exploitation.
