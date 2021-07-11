@@ -53,7 +53,8 @@ We distribute the weight based on the action proportionally.
 \]
 where \(F_i\) is the weight for \(i^{th}\) investment, \(a_i\) is the  \(i^{th}\) action, m is the total number of investments in the investible universe. 
 
-
+\section {Trading System}
+The trading system measures performances of the given portfolios, including MDD, CAGR, profit, and wealth. These performances will be the input to calculate the reward or evaluate the performance of the system. 
 
 \section {Reward Provider}
 The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first use profit p as the baseline for the reward and add a penalty, \(|p_t|-\theta\), upon negative profits exceeding the given absolute value threshold \(\theta\). 
@@ -83,17 +84,17 @@ The threshold \(\theta\) will be the main adjustable parameter of our system. Ad
 \begin{figure}
     \centering
     \includegraphics[width=15cm]{images/reward.png}
-    \caption{Peanlty}
+    \caption{Different peanlty method comparison}
     \label{fig:peanlty}
 \end{figure}
 
-\begin{figure}[ht]
+\begin{figure}[!htb]
+\centering
   \includegraphics[width=15cm]{images/penalty_negtive_profits_compare.png}
   \caption [Comparison of penalty all profits and negative profits only] {Comparison of penalty upon negative profits and all profits in terms of training and validation MDD (moving average 50 epochs)}
   \label{fig:negtive_profits_diagram}
 \end{figure}
 
-\section {Trading System}
-The trading system measures performances of the given portfolios, including MDD, CAGR, profit, and wealth. These performances will be the input to calculate the reward or evaluate the performance of the system. 
+
 
 
