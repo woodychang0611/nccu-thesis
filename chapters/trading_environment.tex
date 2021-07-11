@@ -53,18 +53,17 @@ We distribute the weight based on the action proportionally.
 \]
 where \(F_i\) is the weight for \(i^{th}\) investment, \(a_i\) is the  \(i^{th}\) action, m is the total number of investments in the investible universe. 
 
-\section {Trading System}
-The trading system measures performances of the given portfolios, including MDD, CAGR, profit, and wealth. These performances will be the input to calculate the reward or evaluate the performance of the system. 
+
 
 \section {Reward Provider}
-The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first use profit p as the baseline for the reward and add a penalty, \(p_t-\theta\), upon negative profits exceeding the given absolute value threshold \(\theta\). 
+The Reward Provider provides rewards based on the performances of the portfolio and investor preference. We first use profit p as the baseline for the reward and add a penalty, \(|p_t|-\theta\), upon negative profits exceeding the given absolute value threshold \(\theta\). 
 \[
 p_t = \frac{w_t-w_{t-1}}{w_{t-1}}
 , 
 R_t = 
 \begin{cases}
     p_t,&\text{if  }p_t > -\theta\\
-    2p_t - \theta ,&\text{if  }p_t \leq  \theta
+    p_t - (-pt - \theta) =  2p_t - \theta ,&\text{if  } p_t\leq  -\theta
 \end{cases}
 \]
 where \(R_t\) is the reward, \(p_t\) is the profit and \(w_t\) is the wealth on given t.
@@ -75,8 +74,9 @@ We then apply the penalty upon both positive and negative profits. This increase
 \[
 R_t = 
 \begin{cases}
-    2p_t - \theta,&\text{if  }    $$|p_t|$$ > \theta\\
-    p_t - \theta ,&\text{if  } $$|p_t|$$\leq  -\theta
+    p_t - (pt-\theta) = \theta,&\text{if  } p_t\geq \theta\\
+    p_t,&\text{if  }    \theta > p_t > -\theta\\
+    p_t - (-pt - \theta) =  2p_t - \theta ,&\text{if  } p_t\leq  -\theta
 \end{cases}
 \]
 The threshold \(\theta\) will be the main adjustable parameter of our system. Adjusting it will enable the system to produce portfolios to meet different investors' risk tolerance.
@@ -92,5 +92,8 @@ The threshold \(\theta\) will be the main adjustable parameter of our system. Ad
   \caption [Comparison of penalty all profits and negative profits only] {Comparison of penalty upon negative profits and all profits in terms of training and validation MDD (moving average 50 epochs)}
   \label{fig:negtive_profits_diagram}
 \end{figure}
+
+\section {Trading System}
+The trading system measures performances of the given portfolios, including MDD, CAGR, profit, and wealth. These performances will be the input to calculate the reward or evaluate the performance of the system. 
 
 
